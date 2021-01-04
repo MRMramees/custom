@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Appointments view definition-->
+    <record id="appointments_view_list" model="ir.ui.view">
+      <field name="name">appointments.list</field>
+      <field name="model">bi.appointments</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="appointment_no"/>
+          <field name="patient_info_id"/>
+          <field name="patient_status_id"/>
+          <field name="urgency_level_id"/>
+          <field name="appointment_start_date"/>
+          <field name="speciality_id"/> 
+          <field name="physician_info_id"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Appointments form view-->
+    <record id="     <field name="urgency_level_id"/>
+                    <field name="appointment_end_date"/>
+                    <field name="speciality_id"/>
+                    <field name="invoice_excempt"/>
+                    <field name="validity_date"/>
+                  </group> 
+                  <group>
+                    <field name="patient_info_id"/>
+                    <field name="appointment_start_date"/>
+                    <field name="physician_info_id"/>
+                    <field name="status_id"/>
+                    <field name="consultation_service_id"/>
+                  </group>
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="appointments_action" model="ir.actions.act_window">
+      <field name="name">Appointments</field>
+      <field name="res_model">bi.appointments</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the Appointments</p>
+      </field>
+    </record>
+</odoo>

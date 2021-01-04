@@ -1,0 +1,130 @@
+<odoo>
+  <data>
+
+    <!-- Student list view definition -->
+    <record model="ir.ui.view" id="student_list">
+      <field name="name">bi_student list</field>
+      <field name="model">bi.student</field>
+      <field name="arch" type="xml">
+        <tree string="student_classification" decoration-info="total_marks > 150"> 
+          <field name="name"/>
+          <field name="english_mark"/>
+          <field name="maths_mark"/>
+          <field name="science_mark"/>
+          <field name="total_marks"/>
+          <field name="instructor_id"/>
+          <field name="test_boolean" />
+        </tree>
+      </field>
+    </record>
+
+<!-- Student form view -->
+      <record model="ir.ui.view" id="student_form">
+      <field name="name">bi_test form</field>
+      <field name="model">bi.student</field>
+      <field name="arch" type="xml">
+
+      <form string="Marks Entry" delete="false">
+      <!-- create="false" edit="false" -->
+          <sheet>
+            <group>
+              <field name="name"/>
+            </group>
+            <notebook>
+              <page string="Marks">
+                <group>
+                  <field name="english_mark"/>
+                  <field name="maths_mark"/>
+                  <field name="science_mark"/>
+                  <field name="instructor_id"/>
+                  <field name="test_boolean" />
+                </group>
+              </page>
+              <page string="calculation">
+                <group>
+                  <field name="total_marks"/>
+                  <field name="avg_mark"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!-- Student Action -->
+    <record id="student_action" model="ir.actions.act_window">
+      <field name="name">Marks</field>
+      <field name="res_model">bi.student</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Mark list </p>
+      </field>
+    </record>
+
+    <record id="bi_student_view_search" model="ir.ui.view">
+      <field name="name">bi.student.view.search</field>
+      <field name="model">bi.student</field>
+      <field name="arch" type="xml">
+        <search string="search_instr">
+            <field name="name" />
+            <field name="instructor_id" string="Instructor" 
+              filter_domain="[('instructor_id','ilike',self)]"/>
+        </search>
+      </field>
+    </record>
+
+
+
+<!-- student Wizard -->
+    <record id="wizard_form_view" model="ir.ui.view">
+      <field name="name">wizard.form</field>
+      <field name="model">school.wizard</field>
+      <field name="arch" type="xml">
+          <form string="Select student">
+            <group>
+              <field name="student_id"/>
+            </group>
+            <footer>
+                <button name="print" type="object" string="Print" class="oe_highlight"/>
+                <button special="cancel" string="Cancel"/>
+            </footer>
+          </form>
+      </field>
+    </record>
+
+
+<!-- sales Wizard -->
+    <record id="wizard_sales_form_view" model="ir.ui.view">
+      <field name="name">sales.summary.wizard.form</field>
+      <field name="model">salesxlsx.wizard</field>
+      <field name="arch" type="xml">
+          <form string="Select Dates">
+            <group>
+              <field name="fromdate"/>
+              <field name="tilldate"/>
+            </group>
+            <footer>
+                <button name="show" type="object" string="Show" class="oe_highlight"/>
+                <button special="cancel" string="Cancel"/>
+            </footer>
+          </form>
+      </field>
+    </record>
+
+    <!-- <record id="launch_session_wizard" model="ir.action.act_window">
+      <field name="name">Print Student</field>
+      <field name="res_model">school.wizard</field>
+      <field name="binding_model">bi.student</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record> -->
+
+    <act_window id="launch_session_wizard" name="Print student" binding_model="bi.student"
+        res_model="school.wizard" view_mode="form" target="new"/>
+
+    <act_window id="launch_salesxlsx_wizard" name="Sales Summary" 
+        res_model="salesxlsx.wizard" view_mode="form" target="new"/>
+
+  </data>
+</odoo>

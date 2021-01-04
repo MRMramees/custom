@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="bi_clinic_menu_root"
+            name="Clinic"
+            sequence="8"/>
+        
+        <menuitem id="appointments_menu"
+            name="Appointments"
+            parent="bi_clinic_menu_root"
+            sequence="1"/>
+
+            <menuitem id="appointments_info_menu"
+                name="Appointments"
+                parent="appointments_menu"            
+                action="appointments_action"
+                sequence="1"/>
+       
+        <menuitem id="laboratory_menu"
+            name="Laboratory"
+            parent="bi_clinic_menu_root"
+            sequence="2"/>
+
+            <menuitem id="lab_test_unit_menu" 
+                name="Lab Testing Unit"
+                parent="laboratory_menu"            
+                action="lab_test_units_action"
+                sequence="1"/>
+
+            <menuitem id="lab_test_type_menu"
+                name="Lab Test Type"
+                parent="laboratory_menu"            
+                action="lab_test_type_action"
+                sequence="2"/>
+
+            <menuitem id="lab_test_request_menu"
+                name="Lab Test Request"
+                parent="laboratory_menu"            
+                action="lab_test_request_action"
+                sequence="3"/>
+            
+            <menuitem id="lab_test_result_menu"
+                name="Lab Test Result"
+                parent="laboratory_menu"            
+                action="lab_test_result_action"
+                sequence="4"/>
+
+        <menuitem id="diseases_menu"
+            name="Diseases"
+            parent="bi_clinic_menu_root"
+            sequence="3"/>
+
+            <menuitem id="disease_names_menu"
+                name="Disease Names"
+                parent="diseases_menu"            
+                action="disease_names_action"
+                sequence="1"/>
+
+            <menuitem id="disease_main_category"
+                name="Disease Main Category"
+                parent="diseases_menu"            
+                action="disease_main_category_action"
+                sequence="2"/>
+            
+            <menuitem id="disease_sub_category"
+                name="Disease Sub Category"
+                parent="diseases_menu"            
+                action="disease_sub_category_action"
+                sequence="3"/>
+
+        <menuitem id="patients_and_physician_menu"
+            name="Physician &amp; Patients"
+            parent="bi_clinic_menu_root"
+            sequence="4"/>
+
+            <menuitem id="physician_menu"
+                name="Physician Info"
+                parent="patients_and_physician_menu"            
+                action="physician_info_action"
+                sequence="1"/>
+
+            <menuitem id="patients_details_menu"
+                name="Patient Info"
+                parent="patients_and_physician_menu"            
+                action="patient_info_action"
+                sequence="2"/>
+            
+            <menuitem id="prescription_menu"
+                name="Prescription"
+                parent="patients_and_physician_menu"      
+                action="prescription_action"
+                sequence="3"/>
+        
+        <menuitem id="medicament_menu"
+            name="Medicament"
+            parent="bi_clinic_menu_root"
+            sequence="5"/>
+
+            <menuitem id="medicaments_menu"
+                name="Medicaments"
+                parent="medicament_menu"            
+                action="medicaments_action"
+                sequence="1"/>
+
+            <menuitem id="medicament_form_menu"
+                name="Medicament Form"
+                parent="medicament_menu"            
+                action="medicament_form_action"
+                sequence="2"/>
+
+            <menuitem id="medicament_admin_routes_menu"
+                name="Medicament Admin Routes"
+                parent="medicament_menu"            
+                action="medicament_admin_routes_action"
+                sequence="3"/>
+
+            <menuitem id="medicament_dosage_frequency_menu"
+                name="Medicament Dosage Frequency"
+                parent="medicament_menu"            
+                action="medicament_dosage_frequency_action"
+                sequence="4"/>
+
+            <menuitem id="medicament_dose_units_menu"
+                name="Medicament Dose Units"
+                parent="medicament_menu"            
+                action="medicament_dose_units_action"
+                sequence="5"/>
+
+            <menuitem id="medicament_category_menu"
+                name="Medicament Category"
+                parent="medicament_menu"            
+                action="medicament_category_action"
+                sequence="6"/>
+
+        <menuitem id="misc_menu"
+            name="Miscellaneous"
+            parent="bi_clinic_menu_root"
+            sequence="6"/>
+
+            <menuitem id="genetic_risks_menu"
+                name="Genetic Risk"
+                parent="misc_menu"            
+                action="genetic_risks_action"
+                sequence="1"/>
+
+            <menuitem id="medical_specialities_menu"
+                name="Medical Specialities"
+                parent="misc_menu"            
+                action="medical_specialities_action"
+                sequence="2"/>
+
+
+                
+</odoo>

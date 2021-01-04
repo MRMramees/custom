@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- Instructor List view definition-->
+    <record model="ir.ui.view" id="Instructor_list">
+      <field name="name">bi_Instructor list</field>
+      <field name="model">bi.instructor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="unit"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Instructor form view-->
+      <record model="ir.ui.view" id="Instructor_form">
+      <field name="name">lab.test.unit.form</field>
+      <field name="model">bi.instructor</field>
+      <field name="arch" type="xml">
+bi_Instructor
+             </group> 
+          </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="lab_test_units_action" model="ir.actions.act_window">
+      <field name="name">Marks</field>
+      <field name="res_model">bi.instructor</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Instructor </p>
+      </field>
+    </record>
+
+    </data>
+</odoo>

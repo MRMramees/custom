@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Medicament Dosage Frequency view definition-->
+    <record id="medicament_dosage_frequency_view_list" model="ir.ui.view">
+      <field name="name">medicament.dosage.frequency.list</field>
+      <field name="model">bi.medicament.dosage.frequency</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="code" />
+          <field name="abbreviation"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Medicament Dose Units form view-->
+    <record id="medicament_dosage_frequency_view_form" model="ir.ui.view">
+      <field name="name">medicament.dosage_frequency.form</field>
+      <field name="model">bi.medicament.dosage.frequency</field>
+      <field name="arch" type="xml">
+        <form string="Medicament Dosage Frequency">
+            <sheet>
+                <group> 
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="abbreviation"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="medicament_dosage_frequency_action" model="ir.actions.act_window">
+      <field name="name">Medicament Dosage Frequency</field>
+      <field name="res_model">bi.medicament.dosage.frequency</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Medicament Dosage Frequency</p>
+      </field>
+    </record>
+</odoo>

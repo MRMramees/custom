@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Medicament Category list view definition-->
+    <record id="medicament_admin_routes_view_list" model="ir.ui.view">
+      <field name="name">medicament.admin.routes.list</field>
+      <field name="model">bi.medicament.admin.routes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Medicament Category form view-->
+    <record id="medicament_admin_routes_view_form" model="ir.ui.view">
+      <field name="name">medicament.admin.routes.form</field>
+      <field name="model">bi.medicament.admin.routes</field>
+      <field name="arch" type="xml">
+        <form string="Medicament Administration Routes Form">
+            <sheet>
+                <group> 
+                  <field name="code"/>
+                  <field name="name"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="medicament_admin_routes_action" model="ir.actions.act_window">
+      <field name="name">Medicament Administration Routes</field>
+      <field name="res_model">bi.medicament.admin.routes</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Medicament Administration Routes</p>
+      </field>
+    </record>
+</odoo>

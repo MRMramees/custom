@@ -1,0 +1,1 @@
+from . import bi_project_project_inherit

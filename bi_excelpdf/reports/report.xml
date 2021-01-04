@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>   
+
+<report id="report_sale_docs"
+    string="report_sale_docs"
+    model="account.move"
+    report_type="xlsx"           
+    file="bi_excelpdf.report_sale_docs"           
+    name="bi_excelpdf.report_sale_docs"/>
+    
+<!--+++++++++++++++++++++++++++++PDF++++++++++++++++++++++++++++++++++++++++++++++++++w-->
+
+<report id="print_report_pdf"
+                string="Sample1 Report"
+                model="account.move"
+                report_type="qweb-pdf"
+                name="bi_excelpdf.report_template"
+                file="bi_excelpdf.report_template"/>
+
+
+<template id="report_template">
+<t t-call="web.html_container">
+<t t-call="web.external_layout">
+<div class="page">
+
+    <table class="table table-condensed">
+    <tr>  <th>Number</th> <th>Customer</th>  <th>Invoice Date</th>  
+    <!-- <th>Source Document</th>   -->
+    <th>Sales Person</th>  
+    <th>Due Date</th>  <th>Tax Excluded</th>  <th>Total</th>  <th>Amount Due</th> <th>Status</th>  <th>Payment</th>
+    </tr>
+    <t t-foreach="values" t-as="doc">
+    <tr>  
+      <td>  <t t-esc="doc['id']"/> </td>
+      <td>  <t t-esc="doc['invoice_partner_display_name']"/>  </td>
+      <td>  <t t-esc="doc['invoice_date']"/>  </td>
+      <!-- <td>  <t t-esc="doc['invoice_origin']"/> </td> -->
+      <td>  <t t-esc="doc['name']"/>  </td>
+      <td>  <t t-esc="doc['invoice_date_due']"/>  </td>
+      <td>  <t t-esc="doc['amount_untaxed_signed']"/> </td>
+      <td>  <t t-esc="doc['amount_total_signed']"/>  </td>
+      <td>  <t t-esc="doc['amount_residual_signed']"/>  </td>
+      <td>  <t t-esc="doc['state']"/> </td>
+      <td>  <t t-esc="doc['invoice_payment_state']"/>  </td>
+      
+    </tr>
+    </t>
+    </table>
+
+</div>
+</t>
+</t>
+</template>
+
+
+</odoo>

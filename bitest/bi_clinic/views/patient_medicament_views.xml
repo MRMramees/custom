@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Patient medicament view definition-->
+    <record id="patient_medicament_view_list" model="ir.ui.view">
+      <field name="name">patient.medicament.list</field>
+      <field name="model">bi.patient.medicament</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="medicament_id"/>
+            <field name="indication_id"/>
+            <field name="treatment_start_date"/>
+            <field name="treatment_end_date"/>
+            <field name="course_completed"/>
+            <field name="discontinued"/>
+            <field name="active"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Patient Medicament form view-->
+    <record id="patient_medicament_view_form" model="ir.ui.view">
+      <field name="name">patient.mediament.form</field>
+      <field name="model">bi.patient.medicament</field>
+      <field name="arch" type="xml">
+        <form string="Disease form">
+            <sheet>
+                <group>
+                    <group> 
+                        <field name="medicament_id"/>
+                        <field name="active"/>
+                        <field name="treatment_start_date"/>
+                        <field name="course_completed"/>
+                    </group>
+                    <group>
+                        <field name="physician_info_id"/>
+                        <field name="indication_id"/>
+                        <field name="treatment_end_date"/>
+                        <field name="discontinued"/>
+                    </group>
+                </group>
+                <group string="Administration">
+                    <group>
+                        <field name="medicament_form_id"/>
+                    </group>
+                    <group>
+                        <field name="admin_route_id"/>
+                    </group>
+                </group>
+                <group string="Dosage">
+                    <group>
+                        <field name="dose"/>
+                    </group>
+                    <group>
+                        <field name="dose_unit_id"/>
+                    </group>
+                </group>
+                <group string="Treatement Duration">
+                    <group>
+                        <field name="treatment_duration"/>
+                    </group>
+                    <group>
+                        <field name="treatment_period"/>
+                    </group>
+                </group>
+                <group string="Common Dosage">
+                    <group>
+                        <field name="common_dosage_frequency_id"/>
+                    </group>
+                    <group>
+                        <field name="admin_hours"/>
+                    </group>
+                </group>
+                <group string="Specific Dosage">
+                    <group>
+                        <field name="specific_dosage_frequency_id"/>
+                    </group>
+                    <group>
+                        <field name="unit"/>
+                    </group>
+                </group>
+                <group string="Notes">
+                    <field name="notes" />    
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="patient_medicament_action" model="ir.actions.act_window">
+      <field name="name">Patient Medicament</field>
+      <field name="res_model">bi.patient.medicament</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Medicament</p>
+      </field>
+    </record>
+</odoo>

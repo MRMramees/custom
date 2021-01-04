@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Disease Name view definition-->
+    <record id="disease_names_view_list" model="ir.ui.view">
+      <field name="name">disease.names.list</field>
+      <field name="model">bi.disease.names</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Disease Name form view-->
+    <record id="disease_names_view_form" model="ir.ui.view">
+      <field name="name">disease.names.form</field>
+      <field name="model">bi.disease.names</field>
+      <field name="arch" type="xml">
+        <form string="Disease Names form">
+            <sheet>
+                <group> 
+                  <field name="name"/>
+                  <field name="code"/>
+                  <field name="disease_sub_category"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="disease_names_action" model="ir.actions.act_window">
+      <field name="name">Disease Names</field>
+      <field name="res_model">bi.disease.names</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Disease</p>
+      </field>
+    </record>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Physician info definition-->
+    <record id="physician_info_view_list" model="ir.ui.view">
+      <field name="name">physician.info.list</field>
+      <field name="model">bi.physician.info</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="physician_id" domain="[('is_doctor', '=', True)]"/>
+          <field name="speciality_id"/>
+          <field name="physician_no"/>
+          <field name="institution_id"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Physician info form view-->
+    <record id="physician_info_view_form" model="ir.ui.view">
+      <field name="name">physician.info.form</field>
+      <field name="model">bi.physician.info</field>
+      <field name="arch" type="xml">
+        <form string="Physician info form">
+            <sheet>
+                <group> 
+                  <field name="physician_id" domain="[('is_doctor', '=', True)]"/>
+                  <field name="speciality_id"/>
+                  <field name="physician_no"/>
+                  <field name="institution_id"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="physician_info_action" model="ir.actions.act_window">
+      <field name="name">Physician Informations</field>
+      <field name="res_model">bi.physician.info</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Physician</p>
+      </field>
+    </record>
+</odoo>

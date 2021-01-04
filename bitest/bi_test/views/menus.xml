@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- Top menu item -->
+    <menuitem name="bi_test" id="bi_test_menu_root"/>
+
+    <!-- menu categories -->
+      <menuitem name="Masters" id="bi_master_menu" parent="bi_test_menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Student" id="bi_master_student_menu" parent="bi_master_menu"
+              action="student_action"/>
+    <menuitem name="Instructor" id="bi_master_instructor_menu" parent="bi_master_menu"
+              action="instructor_action"/>
+
+  <!-- menu report -->
+   <menuitem name="Reports" id="bi_report_menu" parent="bi_test_menu_root"/>
+   <menuitem name="Student" id="bi_report_student_menu" parent="bi_report_menu"
+              action="launch_session_wizard"/>
+   <menuitem name="Sales Summary" id="bi_report_salessummary_menu" parent = "bi_report_menu"
+              action="launch_salesxlsx_wizard"/>
+  
+  </data>
+</odoo>

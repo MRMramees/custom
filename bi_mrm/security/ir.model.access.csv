@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bi_mrm,bi_mrm,model_bi_mrm,base.group_user,1,1,1,1
+access_bi_mrm1,bi_mrm1,model_bi_mrm1,base.group_user,1,1,1,1
+
+

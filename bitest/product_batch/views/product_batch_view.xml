@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="batchandexpiry" model="ir.ui.view">
+            <field name="name">id.product.batch</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="product_batch" string="Batch and Expiry">
+                    <field name="batch_ids">
+                        <tree string="Batch and expiry" editable="top">
+                            <field name="batch_no"/>
+                            <field name="expiry_date"/>
+                        </tree>
+                    </field>
+                    <p class="oe_grey oe_edit_only">
+                        <strong>Warning</strong>: adding or deleting attributes
+                        will delete and recreate existing batch and lead
+                        to the loss of their possible customizations.
+                    </p>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

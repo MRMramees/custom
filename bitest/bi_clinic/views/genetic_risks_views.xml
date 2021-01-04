@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Genetic Risks list view -->
+    <record id="genetic_risks_view_list" model="ir.ui.view">
+      <field name="name">genetic.risks.list</field>
+      <field name="model">bi.genetic.risks</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="official_symbol"/>
+            <field name="affected_chromosome"/>
+            <field name="dominance"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Generic Risks form view-->
+    <record  id="genetic_risks_view_form" model="ir.ui.view">
+      <field name="name">genetic.risks.form</field>
+      <field name="model">bi.genetic.risks</field>
+      <field name="arch" type="xml">
+        <form string="Genetic Risks form">
+            <sheet>
+                <group> 
+                    <field name="name"/>
+                    <field name="official_symbol"/>
+                    <field name="affected_chromosome"/>
+                    <field name="dominance"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="genetic_risks_action" model="ir.actions.act_window">
+      <field name="name">Genetic Risks</field>
+      <field name="res_model">bi.genetic.risks</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Genetic Risk</p>
+      </field>
+    </record>
+</odoo>

@@ -1,0 +1,125 @@
+<odoo>
+  <data>
+    <record id="bi_asd_view_tree" model="ir.ui.view">
+      <field name="name">bi.asd.view.tree</field>
+      <field name="model">bi.asd</field>
+      <field name="arch" type="xml">model_name
+        <tree string="Custom">
+               <field name="name" />
+               <field name="age" />
+               <field name="value2" />
+               <field name="description" /> <field name="name" />
+               <field name="age" />
+               <field name="value2" />
+               <field name="description" />="a1" />
+         <field name="a3" />
+         <field name="a4" />
+         <field name="a7" />
+         <field name="age" />  
+         <field name="description" />
+         
+       </tree>
+      </field>
+     </record>
+
+     <record id="bi_asd_view_form" model="ir.ui.view">
+      <field name="name">bi.asd.view.form</field>
+      <field name="model">bi.asd</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="a" />
+              <field name="a1" />
+              <field name="a3" />
+              <field name="age" />
+              <field name="a4" />  
+              <field name="a7" /> 
+              <field name="description" />
+              
+            
+           </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="bi_asd_action" model="ir.actions.act_window">
+      <field name="name">bi.asd.Action</field>
+      <field name="res_model">bi.asd</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+      id="bi_asd_menu"
+      name="bi_asd" <field name="name" />
+               <field name="age" />
+               <field name="value2" />
+               <field name="description" />
+      sequence="10"/>
+
+     <menuitem
+       id="bi_asd_sub"
+       name="bi_asd"
+       action= <field name="name" />
+               <field name="age" />
+               <field name="value2" />
+               <field name="description" />
+<!--0000000000000000000000000000000000000000000000000000000000000-->
+
+    <record id="bi_asd1_view_tree" model="ir.ui.view">
+      <field name="name">bi.asd1.view.tree</field>
+      <field name="model">bi.asd1</field>
+      <field name="arch" type="xml">
+        <tree string="Custom">
+
+         <field name="a5" />
+         <field name="a6" />
+
+         
+       </tree>
+      </field>
+     </record>
+
+
+     <record id="bi_asd1_view_form" model="ir.ui.view">
+      <field name="name">bi.a<record id="bi_mrm_view_tree" model="ir.ui.view">
+    <field name="name">bi.mrm.view.tree</field>
+    <field name="model">bi.mrm</field>
+    <field name="arch" type="xml">
+      <tree string="Custom">
+      <field name="name" />
+      <field name="age" />
+      <field name="value2" />
+      <field name="description" />
+        
+      </tree>
+    </field>
+  </record>
+
+
+
+
+
+    <record id="bi_asd1_action" model="ir.actions.act_window">
+      <field name="name">bi.asd1.Action</field>
+      <field name="res_model">bi.asd1</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+      id="bi_asd1_menu"
+      name="bi_asd1"
+      sequence="10"/>
+
+     <menuitem
+       id="bi_asd1_sub"
+       name="bi_asd1"
+       action="bi_asd1_action"
+       parent="bi_asd1_menu"
+       sequence="10"/>
+
+
+
+  </data>
+</odoo>

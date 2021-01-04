@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_lab_result"
+            string="Lab Test Result Report"
+            model="bi.lab.test.requests"
+            report_type="qweb-pdf"
+            name="bi_clinic.report_lab_result_qweb"
+            file="bi_clinic.report_lab_result_qweb"/>
+    </data>
+</odoo>

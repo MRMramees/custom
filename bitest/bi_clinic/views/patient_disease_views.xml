@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Patient Disease view definition-->
+    <record id="patient_disease_view_list" model="ir.ui.view">
+      <field name="name">patient.disease.list</field>
+      <field name="model">bi.patient.disease</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="disease_id"/>
+            <field name="disease_status_id"/>
+            <field name="active_disease"/>
+            <field name="infectious_disease"/>
+            <field name="severity_id"/>
+            <field name="allergic_disease"/>
+            <field name="pregnancy_warning"/>
+            <field name="treatment_start_date"/>
+            <field name="treatment_end_date"/>
+            <field name="remarks"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Disease Name form view-->
+    <record id="patient_disease_view_form" model="ir.ui.view">
+      <field name="name">patient.disease.form</field>
+      <field name="model">bi.patient.disease</field>
+      <field name="arch" type="xml">
+        <form string="Disease form">
+            <sheet>
+                <group string="Main">
+                    <group> 
+                        <field name="disease_id"/>
+                        <field name="disease_status_id"/>
+                        <field name="active_disease"/>
+                        <field name="diagnosis_date"/>
+                        <field name="diagnosed_age"/>
+                    </group>
+                    <group>
+                        <field name="severity_id"/>
+                        <field name="infectious_disease"/>
+                        <field name="remarks"/>
+                        <field name="healed_date"/>
+                        <field name="physician_info_id"/>
+                    </group>
+                </group>
+                <group string="Allergies">
+                    <group>
+                        <field name="allergic_disease"/>
+                    </group>
+                    <group>
+                        <field name="allergic_type_id"/>
+                    </group>
+                </group>
+                <group string="Pregnancy">
+                    <group>
+                        <field name="pregnancy_warning"/>
+                    </group>
+                    <group>
+                        <field name="contract_pregnancy_week"/>
+                    </group>
+                </group>
+                <group string="Therapy">
+                    <group>
+                        <field name="on_treatment"/>
+                        <field name="treatment_start_date"/>
+                        <field name="diagnosed_age"/>
+                    </group>
+                    <group>
+                        <field name="treatment_desc"/>
+                        <field name="treatment_end_date"/>
+                    </group>
+                </group>
+                <group string="Extra info">
+                        <field name="extra_info" />    
+                </group>
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="patient_disease_action" model="ir.actions.act_window">
+      <field name="name">Patient Disease</field>
+      <field name="res_model">bi.patient.disease</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Disease</p>
+      </field>
+    </record>
+</odoo>

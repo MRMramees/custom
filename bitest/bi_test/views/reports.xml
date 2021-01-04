@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+    <report
+        id="studreport"
+        model="school.wizard"
+        string="Student Report (Excel)"
+        name="bi_test.studreport"
+        file="bi_test.studreport"
+        report_type="xlsx"
+        print_report_name="Student Details"/>
+
+    <!-- <report
+        id="salesreport"
+        model="sales.wizard"
+        string="Sales Report (Excel)"
+        name="bi_test.salessummary"
+        file=""
+        report_type="xlsx"
+        print_report_name="Sales Summary"/> -->
+
+    <!-- <report
+        id="report_session"
+        model="bi.student"  
+        string="Student Report"
+        name="bi_test.report_student_view"
+        file="bi_test.report_student"
+        report_type="qweb-pdf"/>
+
+    <template id="report_student_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p> Name: <span t-field="doc.name"/> </p>
+                        <p> English Mark: <span t-field="doc.english_mark"/> </p>
+                        <p> Maths Mark: <span t-field="doc.maths_mark"/> </p>
+                        <p> Science Mark: <span t-field="doc.science_mark"/> </p>
+                        <p> Total Mark: <span t-field="doc.total_marks"/> </p>
+                        <p> Average Mark: <span t-field="doc.avg_mark"/> </p>
+                        <p t-if="doc.avg_mark > 200"> Excellent </p>
+                        <p t-elif="doc.avg_mark > 100"> Good </p>
+                        <p t-else="doc.avg_mark > 0"> Fair </p>
+                        <t t-foreach="[1, 2, 3]" t-as="i">
+                            <p><t t-esc="i * -2"/></p>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template> -->
+</odoo>

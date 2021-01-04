@@ -1,0 +1,16 @@
+    <record id="sales_wizardview" model="ir.ui.view">
+      <field name="name">sales.wizard.form</field>
+      <field name="model">salesxlsx.wizard</field>
+      <field name="arch" type="xml">
+          <form string="Select dates">
+            <group>
+              <field name="fromdate"/>
+              <field name="tilldate"/>
+            </group>
+            <footer>
+                <button name="show" type="object" string="Show" class="oe_highlight"/>
+                <button special="cancel" string="Cancel"/>
+            </footer>
+          </form>
+      </field>
+    </record>

@@ -1,0 +1,49 @@
+<odoo>
+  <data>
+    
+    <record id="bi_custom_view_tree" model="ir.ui.view">
+      <field name="name">bi.custom.view.tree</field>
+      <field name="model">bi.custom</field>
+      <field name="arch" type="xml">
+        <tree string="Custom">
+          <field name="name" />
+          <field name="roll_no" />
+        </tree>
+      </field>
+    </record>
+
+    <record id="bi_custom_view_form" model="ir.ui.view">
+      <field name="name">bi.custom.view.form</field>
+      <field name="model">bi.custom</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="roll_no" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="bi_custom_action" model="ir.actions.act_window">
+      <field name="name">bi.custom.action</field>
+      <field name="res_model">bi.custom</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+      id="bi_custom_root_menu"
+      name="bi_custom_root"
+      sequence="10"/>
+    
+    <menuitem
+      id="bi_custom_sub_menu"
+      name="bi_custom_sub"
+      action="bi_custom_action"
+      parent="bi_custom_root_menu"
+      sequence="10"/>
+
+  </data>
+</odoo>

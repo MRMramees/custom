@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Medicament Category list view definition-->
+    <record id="medicament_category_view_list" model="ir.ui.view">
+      <field name="name">medicament.category.list</field>
+      <field name="model">bi.medicament.category</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Medicament Category form view-->
+    <record id="medicament_category_view_form" model="ir.ui.view">
+      <field name="name">medicament.sub.category.form</field>
+      <field name="model">bi.medicament.category</field>
+      <field name="arch" type="xml">
+        <form string="Medicament Category Form">
+            <sheet>
+                <group> 
+                  <field name="name"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="medicament_category_action" model="ir.actions.act_window">
+      <field name="name">Medicament Category</field>
+      <field name="res_model">bi.medicament.category</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Medicament</p>
+      </field>
+    </record>
+</odoo>

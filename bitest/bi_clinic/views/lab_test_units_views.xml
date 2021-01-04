@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Lab test Units view definition-->
+    <record id="lab_test_unit_view_list" model="ir.ui.view">
+      <field name="name">lab.test.unit.list</field>
+      <field name="model">bi.lab.test.units</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="unit"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Lab Test Units form view-->
+    <record id="lab_test_unit_view_form" model="ir.ui.view" >
+      <field name="name">lab.test.unit.form</field>
+      <field name="model">bi.lab.test.units</field>
+      <field name="arch" type="xml">
+        <form string="Lab Test Unit form">
+            <sheet>
+                <group> 
+                  <field name="unit"/>
+                  <field name="code"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="lab_test_units_action" model="ir.actions.act_window">
+      <field name="name">Lab Testing Units</field>
+      <field name="res_model">bi.lab.test.units</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Lab Test Units </p>
+      </field>
+    </record>
+</odoo>

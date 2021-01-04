@@ -1,0 +1,180 @@
+<odoo>
+  <data>
+  <record id="bi_mrm_view_tree" model="ir.ui.view">
+    <field name="name">bi.mrm.view.tree</field>
+    <field name="model">bi.mrm</field>
+    <field name="arch" type="xml">
+      <tree string="">
+      <field name="name" />
+      <field name="age" />
+      <field name="value2" />
+      <field name="description" />
+      <field name="abc" />
+      <field name="percent" widget="percentpie" />
+      <field name="vard" widget="radio" />
+      <field name="salary1" />
+      <field name="age1" />
+      </tree>
+    </field>
+  </record>
+
+
+
+  <record id="bi_mrm_view_form" model="ir.ui.view">
+    <field name="name">bi.mrm.view.form</field>
+    <field name="model">bi.mrm</field>
+    <field name="arch" type="xml">
+      <form string="">
+
+      <header>
+       
+        <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+        
+
+        <button name="button_done" string="Done" class="oe_highlight" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+        <button name="button_reset" string="Reset to Draft" class="oe_highlight" type="object" attrs="{'invisible': [('state', 'in', ['draft'])]}"/>
+        <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible': [('state', 'in', ['cancel'])]}"/>
+       
+
+
+
+      </header>
+
+
+
+        <sheet>
+          <group>
+            
+               <field name="name" />
+               <field name="age" />
+               <field name="value2" />
+               <field name="description" />
+               <field name="abc" />
+               <field name="percent" widget="percentpie" />
+               <field name="vard" widget="radio" />
+               <field name="salary1" />
+               <field name="age1" />
+               
+          </group>
+<!---->
+          <button string="Create" name="createa" type="object" class="oe_highlight"/>
+          <button string="Write" name="writeb" type="object" class="oe_highlight"/>
+<!---->
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+
+
+
+
+    <record id="bi_mrm_action" model="ir.actions.act_window">
+      <field name="name">bi.mrm.Action</field>
+      <field name="res_model">bi.mrm</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+
+<menuitem
+  id="bi_mrm_menu"
+  name="bi_mrmr"
+  sequence="10"/>
+
+
+<menuitem
+  id="bi_mrm_sub"
+  name="bi_mrms"
+  action="bi_mrm_action"
+  parent="bi_mrm_menu"
+  sequence="10"/>
+
+
+
+<!--manytoone   -->
+
+
+
+ <record id="bi_mrm1_view_tree" model="ir.ui.view">
+    <field name="name">bi.mrm1.view.tree</field>
+    <field name="model">bi.mrm1</field>
+    <field name="arch" type="xml">
+      <tree string="Custom">
+      <field name="new" />
+      <field name="fresh" />
+      <field name="deg" widget="many2many_tags" />
+      <field name="salary2" />
+      <field name="age2" />
+
+
+
+
+        <!---->
+
+
+      </tree>
+    </field>
+  </record>
+
+
+
+  <record id="bi_mrm1_view_form" model="ir.ui.view">
+    <field name="name">bi.mrm1.view.form</field>
+    <field name="model">bi.mrm1</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <sheet>
+          <group>
+        
+  
+               <field name="new" />
+               <field name="fresh" />
+               <field name="deg" widget="many2many_tags"/> 
+               <field name="salary2" />
+               <field name="age2" />
+           
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+
+
+
+
+
+  <record id="bi_mrm1_action" model="ir.actions.act_window">
+      <field name="name">bi.mrm1.Action</field>
+      <field name="res_model">bi.mrm1</field>
+      <field name="view_mode">tree,form</field>
+
+      
+  </record>
+
+<menuitem
+  id="bi_mrm1_menu"
+  name="bi_mrm1"
+  sequence="10"/>
+
+
+<menuitem
+  id="bi_mrm1_sub"
+  name="bi_mrm1"
+  action="bi_mrm1_action"
+  parent="bi_mrm1_menu"
+  sequence="10"/>
+
+
+</odoo>
+  </data>
+
+
+
+
+
+
+
+
+

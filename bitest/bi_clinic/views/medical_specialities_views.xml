@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Disease Name view definition-->
+    <record model="ir.ui.view" id="medical_specialities_list">
+      <field name="name">medical.specialities.list</field>
+      <field name="model">bi.medical.specialities</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="code"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Disease Name form view-->
+    <record model="ir.ui.view" id="medical_specialites_form">
+      <field name="name">medical.specialities.form</field>
+      <field name="model">bi.medical.specialities</field>
+      <field name="arch" type="xml">
+        <form string="Medical Specialities">
+            <sheet>
+                <group> 
+                  <field name="name"/>
+                  <field name="code"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="medical_specialities_action" model="ir.actions.act_window">
+      <field name="name">Medical Specialities</field>
+      <field name="res_model">bi.medical.specialities</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Medical Speciality</p>
+      </field>
+    </record>
+</odoo>

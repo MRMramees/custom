@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- <template id="report_lab_result">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <div class = "oe_structure"/>
+                        <div class = "row">
+                            <div class="col-xs-2" style="margin:auto;">
+                            </div>
+                            <center>
+                                <div class="col-xs-8" style="margin:auto">
+                                    <table class="table table-condensed" style="border: 3px solid black !important;">
+                                        <tr>
+                                            <td width="40%"> <t t-esc="doc.name"/> </td>
+                                            <td width="90%"> <t t-esc="doc.patient_info_id"/> </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template> -->
+    <template id="report_lab_result_qweb">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2 style="text-align:center">Laboratory Report</h2>
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <!-- <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <div class = "row">
+                            <div class="col-xs-2">
+                            </div>
+                            <center>
+                                <div class="col-xs-8">
+                                   
+                                </div>
+                            </center>
+                        </div> -->
+                        <table>
+                            <tr>
+                                <td width="25%">Test Reference: </td>
+                                <td width="35%"> <t t-esc="doc.request_no"/> </td>
+                                <td width="25%"> Patient Name: </td>
+                                <td width="25%"> <t t-esc="doc.patient_info_id.patient_id.name"/> </td>
+                            </tr>
+                            <tr>
+                                <td width="25%"> Physician Name: </td>
+                                <td width="25%"> <t t-esc="doc.physician_info_id.physician_id.name"/> </td>
+                            </tr>
+                        </table>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Test</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Result</th>
+                                    <th scope="col">Upper Limit</th>
+                                    <th scope="col">Lower Limit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <t t-foreach="doc.lab_test_request_line" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <t t-esc="line.test_type_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.test_request_type_line_id.name"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.test_result"/>
+                                        </td>
+                                        
+                                        <td>
+                                            <t t-esc="line.test_request_type_line_id.lower_limit"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="line.test_request_type_line_id.upper_limit"/>
+                                        </td>
+                                        
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    </data>
+</odoo>

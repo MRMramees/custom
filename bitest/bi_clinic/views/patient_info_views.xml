@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Patient Information LIST view-->
+    <record id="patient_info_view_list" model="ir.ui.view">
+      <field name="name">patient.info.list</field>
+      <field name="model">bi.patient.info</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="patient_id"/>
+          <field name="patient_no"/>
+          <field name="age"/> 
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Patient Information form view-->
+    <record id="patient_info_view_form" model="ir.ui.view">
+      <field name="name">patient.info.form</field>
+      <field name="model">bi.patient.info</field>
+      <field name="arch" type="xml">
+        <form string="Patient Information form">
+            <sheet>
+              <group>
+                <group> 
+                  <field name="patient_no"/>
+                  <field name="age"/>
+                  <field name="gender"/>
+                </group> 
+                <group>
+                  <field name="patient_id" context="{'default_type': False}"/>
+                  <field name="date_of_birth"/>
+                  <field name="blood_group"/>
+                </group>
+              </group>
+              <notebook>
+                <page name="disease_page" string="Diseases">
+                  <field name="disease_lines">
+                    <tree>
+                      <field name="disease_id"/>
+                      <field name="disease_status_id"/>
+                      <field name="active_disease"/>
+                      <field name="infectious_disease"/>
+                      <field name="severity_id"/>
+                      <field name="allergic_type_id"/>
+                      <field name="pregnancy_warning"/>
+                      <field name="diagnosis_date"/>
+                      <field name="treatment_end_date"/>
+                      <field name="remarks" />
+                    </tree>
+                  </field>
+                </page>
+                <page name="medicament_page" string="Medicaments">
+                  <field name="medicament_lines">
+                    <tree>
+                      <field name="medicament_id"/>
+                      <field name="indication_id"/>
+                      <field name="treatment_start_date"/>
+                      <field name="treatment_end_date"/>
+                      <field name="course_completed"/>
+                      <field name="course_completed"/>
+                      <field name="discontinued"/>
+                    </tree>
+                  </field>
+                </page>
+                <page name="appointments_page" string="Appointments">
+                  <field name="appointment_lines">
+                    <tree>
+                      <field name="appointment_no"/>
+                      <field name="patient_status_id"/>
+                      <field name="urgency_level_id"/>
+                      <field name="appointment_start_date"/>
+                      <field name="speciality_id"/>
+                      <field name="physician_info_id"/>
+                    </tree>
+                  </field>
+                </page>
+              </notebook>
+            </sheet>
+        </form>
+      </field>
+    </record> 
+  
+    <record id="patient_info_action" model="ir.actions.act_window">
+      <field name="name">Patient Information</field>
+      <field name="res_model">bi.patient.info</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the first Patient Information</p>
+      </field>
+    </record>
+</odoo>

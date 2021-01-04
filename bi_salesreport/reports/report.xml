@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <report id="print_report_pdf"
+                string="Sample Report"
+                model="sale.order"
+                report_type="qweb-pdf"
+                name="bi_salesreport.report_template"
+                file="bi_salesreport.report_template"/>
+
+
+<template id="report_template">
+<t t-call="web.html_container">
+<t t-call="web.external_layout">
+<div class="page">
+
+    <table class="table table-condensed">
+    <tr>  <th>Quotation Number</th> <th>Create Date</th>  <th>Customer</th>
+    </tr>
+    <t t-foreach="docs" t-as="doc">
+    <tr>  
+      <td>  <t t-esc="doc.name"/> </td>
+      <td>  <t t-esc="doc.create_date"/>  </td>
+      <td>  <t t-esc="doc.partner_id.name"/>  </td>
+    </tr>
+    </t>
+    </table>
+
+</div>
+</t>
+</t>
+</template>
+
+
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bi_instructor_id,access_bi_instructor,model_bi_instructor,bi_test.student_manager,1,1,1,1
+access_bi_student_id,access_bi_student,model_bi_student,bi_test.student_manager,1,1,1,1
+access_bi_instructor_id_base,access_bi_instructor,model_bi_instructor,base.group_user,1,1,1,1
+access_bi_student_id_base,access_bi_student,model_bi_student,base.group_user,1,1,1,1

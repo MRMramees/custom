@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="student_manager" model="res.groups">
+        <field name="name">School / Manager</field>
+    </record>
+
+    <record id="show_avgmarks" model="ir.rule">
+        <field name="name">Same user can see same record</field>
+        <field name="model_id" ref="model_bi_student"/>
+        <field name="groups" eval="[(4,ref('bi_test.student_manager'))]"/>
+        <field name="domain_force">[('test_boolean','=', False)]</field>
+    </record>
+</odoo>

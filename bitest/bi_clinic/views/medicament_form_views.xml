@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Disease Sub Category list view definition-->
+    <record id="medicament_form_view_list" model="ir.ui.view">
+      <field name="name">medicament.form.list</field>
+      <field name="model">bi.medicament.form</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="code"/>
+            <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- Disease Sub Category form view-->
+    <record id="medicament_form_view_form" model="ir.ui.view">
+      <field name="name">medicament.form.form</field>
+      <field name="model">bi.medicament.form</field>
+      <field name="arch" type="xml">
+        <form string="Medicament Form">
+            <sheet>
+                <group> 
+                  <field name="code"/>
+                  <field name="name"/>
+                </group> 
+            </sheet>
+        </form>
+      </field>
+    </record> 
+
+    <record id="medicament_form_action" model="ir.actions.act_window">
+      <field name="name">Medicament Form Category</field>
+      <field name="res_model">bi.medicament.form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">Create the Medicament Form</p>
+      </field>
+    </record>
+</odoo>

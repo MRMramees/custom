@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <odoo>
+    <data>
+    
+    <record id="idea_category_list2" model="ir.ui.view">
+    <field name="name">id.category.list2</field>
+        <field name="model">bi.student</field>
+        <field name="inherit_id" ref="bi_test.student_form"/>
+            <field name="arch" type="xml">
+                <!-- find field description and add the field idea_ids after it  -->
+                <xpath expr="//field[@name='avg_mark']" position="after">
+                    <field name="desc"/>
+                </xpath>
+          
+            </field>
+        </record> 
+    </data>
+</odoo>
