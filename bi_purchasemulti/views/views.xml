@@ -8,14 +8,14 @@
             <field name="arch" type="xml">
                 <form string="Sale Order">
                     <p class="oe_grey"> </p>
-                    <group>
+                    <!-- <group>
                         <group>
                             <field name="mycompany_id" />
                         </group>
                         <group>
                             <field name="date_order" />
                         </group>
-                    </group>
+                    </group> -->
          
                     <group>
                         <field name="new_order_line_ids" nolabel ="1">
