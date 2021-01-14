@@ -23,11 +23,12 @@
     'depends': ['base','stock'],
 
     # always loaded
-    'data': [
+    'data': [        
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/views.xml',
         # 'views/templates.xml',
     ],
-    # only loaded in demonstration mode
+    # only loaded in demonstration mode 
    
 }
