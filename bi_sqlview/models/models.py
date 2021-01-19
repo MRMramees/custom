@@ -32,3 +32,5 @@ class bi_sqlview(models.Model):
             so.amount_total as amount_total, 
             so.state as state 
             FROM sale_order as so) ''')
+            
+            
